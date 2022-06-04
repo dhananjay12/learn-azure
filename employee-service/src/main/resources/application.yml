@@ -1,0 +1,61 @@
+spring:
+  application:
+    name: employee-service
+  profiles:
+    active: mssql #mssql or h2
+  liquibase:
+    enabled: false
+---
+spring:
+  liquibase:
+    change-log: classpath:db-changelog.xml
+    enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    show_sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+        hibernate.cache.use_query_cache: false
+        hibernate.generate_statistics: true
+  h2:
+    console:
+      enabled: true
+  config:
+    activate:
+      on-profile: h2
+---
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:db-changelog.xml
+  datasource:
+    url: jdbc:sqlserver://localhost:1433
+    username: sa
+    password: P@ssw0rd
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    openInView: false
+    show_sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+#      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      properties:
+        hibernate.cache.use_query_cache: false
+        hibernate.generate_statistics: true
+  config:
+    activate:
+      on-profile: mssql
