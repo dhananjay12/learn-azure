@@ -15,6 +15,7 @@ spring:
       function.definition: consume
       bindings:
         consume-in-0.destination: topic0
+        consume-in-0.group: sub0
         hello-out-0.destination: topic0
       servicebus:
         bindings:
