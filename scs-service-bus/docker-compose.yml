@@ -1,0 +1,22 @@
+version: "3.7"
+# https://docs.docker.com/compose/compose-file/
+
+services:
+######
+# RabbitMQ setup
+######
+  rabbitmq:
+    image: 'bitnami/rabbitmq:3.9.22'
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+# If you have already built it locally
+#  app:
+#    image: 'scs-service-bus:1.0.0'
+#    environment:
+#      spring.rabbitmq.host: rabbitmq
+#    ports:
+#      - "8080:8080"

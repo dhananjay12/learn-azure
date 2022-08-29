@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scs-service-bus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scs-service-bus
+  template:
+    metadata:
+      labels:
+        app: scs-service-bus
+    spec:
+      containers:
+        - env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "azure"
+            - name: AZURE_CLIENT_ID
+              value: "<fill-this>"
+            - name: AZURE_CLIENT_SECRET
+              value: "<fill-this>"
+            - name: AZURE_TENANT_ID
+              value: "<fill-this>"
+            - name: SERVICEBUS_NAMESPACE
+              value: "<fill-this>"
+            - name: "spring.cloud.azure.servicebus.resource.resource-group"
+              value: "<fill-this>"
+            - name: "spring.cloud.azure.profile.subscription-id"
+              value: "<fill-this>"
+          image: scs-service-bus:1.0.0
+          name: scs-service-bus
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              memory: "256Mi"
+            limits:
+              memory: "512Mi"
+          ports:
+            - containerPort: 8080
