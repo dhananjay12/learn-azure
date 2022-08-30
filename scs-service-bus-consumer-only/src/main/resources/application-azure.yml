@@ -1,0 +1,22 @@
+spring:
+  config:
+    activate:
+      on-profile: azure
+  cloud:
+    azure:
+      credential:
+        client-id: ${AZURE_CLIENT_ID}
+        client-secret: ${AZURE_CLIENT_SECRET}
+      profile:
+        tenant-id: ${AZURE_TENANT_ID}
+      servicebus:
+        namespace: ${SERVICEBUS_NAMESPACE}
+    stream:
+      function.definition: consume
+      bindings:
+        consume-in-0.destination: topic0
+        consume-in-0.group: sub0
+      servicebus:
+        bindings:
+          consume-in-0.consumer.auto-complete: false
+      default-binder: servicebus

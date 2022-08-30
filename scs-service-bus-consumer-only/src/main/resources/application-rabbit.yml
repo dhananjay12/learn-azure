@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: rabbit
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    stream:
+      default-binder: rabbit
+      ## Consumer Properties
+      function.definition: consume
+      bindings.consume-in-0.destination: topic0

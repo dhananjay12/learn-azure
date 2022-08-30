@@ -1,0 +1,11 @@
+fileignoreconfig:
+- filename: scs-service-bus/docker-compose.yml
+  checksum: 4b4b1acd19f94b13ecf2d8b6f18660362fe04825fe0d3a494bbdddbfb8065dd9
+- filename: scs-service-bus/src/main/resources/application-azure.yml
+  checksum: d8029ab6fe4c4d583c4f2bba72823fefce09f449261a3bd6b45535d03fc190db
+- filename: scs-service-bus-consumer-only/docker-compose.yml
+  checksum: f6cf75582823a55c6bd408b458149f01e81446ee37c0a6f601a949337cf539aa
+- filename: scs-service-bus-consumer-only/src/main/resources/application-azure.yml
+  checksum: 587552e99dbced4ec175383996fd5d551770a29d210725a4a6293964b06d40ef
+version: ""
+
