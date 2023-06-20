@@ -22,3 +22,9 @@ spring:
           consume-in-0.consumer.auto-complete: false
           hello-out-0.producer.entity-type: topic
       default-binder: servicebus
+management:
+  health:
+    rabbit:
+      enabled: false
+
+topic

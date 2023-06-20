@@ -1,1 +1,9 @@
-POST localhost:8080/hello?param=test2
+POST localhost:8080/hello?param=test2qwsdqwsqwsqwsqwsqws
+
+### Actuator
+GET http://localhost:8080/actuator/health/readiness
+
+
+### Person Request
+
+GET http://localhost:8080/test

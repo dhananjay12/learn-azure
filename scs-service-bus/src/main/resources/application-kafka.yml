@@ -1,0 +1,22 @@
+spring:
+  autoconfigure:
+    exclude: com.azure.spring.cloud.autoconfigure.servicebus.AzureServiceBusAutoConfiguration
+  config:
+    activate:
+      on-profile: kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+  cloud:
+    stream:
+      default-binder: kafka
+      ## Producer Properties
+      output-bindings: hello
+      bindings.hello-out-0.destination: topic0
+      ## Consumer Properties
+      function.definition: consume
+      bindings.consume-in-0.destination: topic0
+
+management:
+  health:
+    rabbit:
+      enabled=false:

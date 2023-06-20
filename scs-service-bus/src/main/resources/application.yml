@@ -3,4 +3,11 @@ server:
 
 spring:
   profiles:
-    active: rabbit
+    active: azure #azure kafka rabbit
+  cloud:
+    stream:
+      function.definition: consume
+      bindings:
+        consume-in-0.destination: topic0
+        consume-in-0.group: sub0
+        hello-out-0.destination: topic0

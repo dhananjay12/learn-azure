@@ -7,5 +7,8 @@ fileignoreconfig:
   checksum: f6cf75582823a55c6bd408b458149f01e81446ee37c0a6f601a949337cf539aa
 - filename: scs-service-bus-consumer-only/src/main/resources/application-azure.yml
   checksum: 587552e99dbced4ec175383996fd5d551770a29d210725a4a6293964b06d40ef
+- filename: scs-service-bus/src/main/java/com/example/azure/scsservicebus/HelloController.java
+  checksum: 5baf89e7c682fc2d056b8d3b7a446ded72c73cb5543afc91280b75f6cd14147d
+
 version: ""
 
