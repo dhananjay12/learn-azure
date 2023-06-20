@@ -28,3 +28,4 @@ mvn*
 /dist/
 /nbdist/
 /.nb-gradle/
+application-azure.properties
