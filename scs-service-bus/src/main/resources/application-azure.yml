@@ -26,5 +26,3 @@ management:
   health:
     rabbit:
       enabled: false
-
-topic
