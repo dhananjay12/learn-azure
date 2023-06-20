@@ -16,18 +16,28 @@ spec:
         - env:
             - name: SPRING_PROFILES_ACTIVE
               value: "azure"
-            - name: AZURE_CLIENT_ID
+            - name: spring.cloud.azure.credential.client-id
               value: "<fill-this>"
-            - name: AZURE_CLIENT_SECRET
+            - name: spring.cloud.azure.credential.client-secret
               value: "<fill-this>"
-            - name: AZURE_TENANT_ID
+            - name: spring.cloud.azure.profile.subscription-id
               value: "<fill-this>"
-            - name: SERVICEBUS_NAMESPACE
+            - name: spring.cloud.azure.profile.tenant-id
               value: "<fill-this>"
-            - name: "spring.cloud.azure.servicebus.resource.resource-group"
+            - name: spring.cloud.azure.servicebus.namespace
               value: "<fill-this>"
-            - name: "spring.cloud.azure.profile.subscription-id"
+            - name: spring.cloud.azure.servicebus.resource.resource-group
               value: "<fill-this>"
+            - name: spring.cloud.stream.function.autodetect
+              value: "false"
+            - name: SPRING_CLOUD_STREAM_DEFAULT-BINDER
+              value: "servicebus"
+            - name: SPRING_CLOUD_AZURE_SERVICEBUS_ENTITY-TYPE
+              value: "topic"
+            - name: management.health.rabbit.enabled
+              value: "false"
+            - name: spring.cloud.azure.retry.fixed.max-retries
+              value: "0"
           image: scs-service-bus:1.0.0
           name: scs-service-bus
           imagePullPolicy: IfNotPresent
