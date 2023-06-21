@@ -14,5 +14,4 @@ kubectl create ns test-azure
 kubectl apply -f k8s -n test-azure
 kubectl delete -f k8s -n test-azure
 kubectl delete ns test-azure
-kubectl port-forward service/scs-service-bus 8080:8080 -n test-azure
 ```
